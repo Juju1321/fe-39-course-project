@@ -1,0 +1,23 @@
+@import "src/assets/mixins";
+@import "src/assets/colors";
+
+
+.userBlock {
+  background-color: $primary;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 17px 0px 19px 30px;
+}
+
+.userAbbreviation {
+  @include user();
+  width: 48px;
+  height: 48px;
+  background-color: $primary-secondary;
+  border-radius: 2px;
+}
+
+.userName {
+  @include user();
+}
