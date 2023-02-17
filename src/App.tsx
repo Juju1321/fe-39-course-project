@@ -1,8 +1,8 @@
-import "./App.css";
-import Button from "./components/Button";
-import {ButtonType} from "./components/Button/Button";
+import Button, {ButtonType} from "./components/Button";
 import User from "./components/User"
 import Title from "./components/Title"
+import Tabs from "./components/Tabs";
+import BurgerButton from "./components/BurgerButton";
 
 const App = () => {
   return (
@@ -14,6 +14,8 @@ const App = () => {
         <Button title={'Primary'} type={ButtonType.Primary} onClick={() => {}}/>
         <Button title={'Secondary'} type={ButtonType.Secondary} onClick={() => {}}/>
         <Button title={'Error'} type={ButtonType.Error} onClick={() => {}}/>
+        <Tabs />
+        <BurgerButton />
     </div>
   );
 };
