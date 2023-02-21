@@ -4,31 +4,31 @@ import classNames from "classnames";
 import styles from "./Tabs.module.scss";
 
 enum TabsNames {
-    ALL,
-    FAVORITES,
-    POPULAR,
+    All,
+    Favorites,
+    Popular,
 }
 
 const TABS_LIST = [
     {
         title: 'All',
         disabled: false,
-        key: TabsNames.ALL,
+        key: TabsNames.All,
     },
     {
         title: 'My favorites',
         disabled: false,
-        key: TabsNames.FAVORITES,
+        key: TabsNames.Favorites,
     },
     {
         title: 'Popular',
         disabled: false,
-        key: TabsNames.POPULAR,
+        key: TabsNames.Popular,
     },
 ]
 
 const Tabs = () => {
-    const [activeTab, setActiveTab] = useState(TabsNames.ALL);
+    const [activeTab, setActiveTab] = useState(TabsNames.All);
 
     const onTabClick = (key: TabsNames) => () => setActiveTab(key);
 
