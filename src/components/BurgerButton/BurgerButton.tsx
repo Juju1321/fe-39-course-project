@@ -4,22 +4,14 @@ import { CloseIcon, OpenedMenu } from "../../assets/icons";
 
 import styles from "./BurgerButton.module.scss";
 
-enum BurgerButtonState {
-    OPENED,
-    CLOSED,
-};
-
 const BurgerButton = () => {
-    const [activeBurgerButton, setActiveBurger] = useState(BurgerButtonState.OPENED)
+    const [isOpened, setOpened] = useState(false)
 
-    const onBurgerClick = () =>
-        BurgerButtonState.OPENED === activeBurgerButton
-        ? setActiveBurger(BurgerButtonState.CLOSED)
-        : setActiveBurger(BurgerButtonState.OPENED)
+    const onBurgerClick = () => setOpened(!isOpened)
 
     return (
         <Button
-            title={ activeBurgerButton === BurgerButtonState.OPENED ? <OpenedMenu /> : <CloseIcon /> }
+            title={ !isOpened ? <OpenedMenu /> : <CloseIcon /> }
             onClick={onBurgerClick}
             type={ButtonType.Primary}
             className={styles.burgerButton}
