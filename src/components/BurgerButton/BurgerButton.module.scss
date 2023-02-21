@@ -1,0 +1,9 @@
+@import "src/assets/colors";
+
+.burgerButton {
+  padding: 30px 30px;
+  margin-top: 10px;
+  &:hover {
+    background-color: $primary;
+  }
+}
