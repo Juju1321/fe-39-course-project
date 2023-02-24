@@ -1,5 +1,5 @@
-import Card from "./components/Card/Card";
-import {CardSize} from "./components/Card/types";
+import Input from "./components/Input";
+import React, {useState} from "react";
 
 const MOCK_CARD = {
     id: 0,
@@ -13,11 +13,15 @@ const MOCK_CARD = {
 };
 
 const App = () => {
+    const [inputText, setInputText] = useState('')
+
+    const onChange = (value: string) => setInputText(value)
+
   return (
     <div>
-        <Card card={MOCK_CARD} size={CardSize.Large}/>
-        <Card card={MOCK_CARD} size={CardSize.Medium}/>
-        <Card card={MOCK_CARD} size={CardSize.Small}/>
+        <Input title={'Title'} placeholder={'Placeholder'} onChange={onChange} value={inputText}/>
+        <Input title={'Title'} placeholder={'Placeholder'} onChange={onChange} value={inputText} disabled/>
+        <Input title={'Title'} placeholder={'Placeholder'} onChange={onChange} value={inputText} errorText={'Error Text'}/>
     </div>
   );
 };
