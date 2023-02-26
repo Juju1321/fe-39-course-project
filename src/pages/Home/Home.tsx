@@ -4,7 +4,8 @@ import styles from "./Home.module.scss";
 import Title from "../../components/Title";
 import Tabs from "../../components/Tabs";
 import CardsList from "../../components/CardsList";
-import {CardType} from "../../components/Card";
+import { CardType } from "../../components/Card";
+import {TabsType, TabsNames} from "../../components/Tabs/types";
 
 const MOCK_ARRAY = [
     {
@@ -127,19 +128,39 @@ const MOCK_ARRAY = [
         description: 'Описание поста',
         author: 10,
     },
+];
+
+const TABS_LIST = [
+    {
+        title: 'All',
+        disabled: false,
+        key: TabsNames.All,
+    },
+    {
+        title: 'My favorites',
+        disabled: false,
+        key: TabsNames.Favorites,
+    },
+    {
+        title: 'Popular',
+        disabled: false,
+        key: TabsNames.Popular,
+    },
 ]
 
 const Home = () => {
     const [cardsList, setCardsList] = useState<CardType[]>([])
-
     useEffect(() => {
         setCardsList(MOCK_ARRAY)
     }, [MOCK_ARRAY])
 
+    const [activeTab, setActiveTab] = useState(TabsNames.All);
+    const onTabClick = (key: TabsNames) => () => setActiveTab(key);
+
     return (
         <div>
             <Title title={"Blog"} />
-            <Tabs />
+            <Tabs tabsList={TABS_LIST} activeTab={activeTab} onTabClick={onTabClick}/>
             <CardsList cardsList={MOCK_ARRAY}/>
         </div>
     )
