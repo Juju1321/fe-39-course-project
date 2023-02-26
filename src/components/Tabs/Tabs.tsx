@@ -1,6 +1,6 @@
-import React, {FC, useState} from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
-import {TabsNames, TabsProps} from "./types";
+import { TabsProps } from "./types";
 
 import styles from "./Tabs.module.scss";
 

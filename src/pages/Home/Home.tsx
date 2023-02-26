@@ -5,7 +5,7 @@ import Title from "../../components/Title";
 import Tabs from "../../components/Tabs";
 import CardsList from "../../components/CardsList";
 import { CardType } from "../../components/Card";
-import {TabsType, TabsNames} from "../../components/Tabs/types";
+import { TabsNames } from "../../components/Tabs/types";
 
 const MOCK_ARRAY = [
     {
