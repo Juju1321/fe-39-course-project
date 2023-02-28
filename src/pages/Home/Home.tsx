@@ -155,12 +155,12 @@ const Home = () => {
     }, [MOCK_ARRAY])
 
     const [activeTab, setActiveTab] = useState(TabsNames.All);
-    const onTabClick = (key: TabsNames) => () => setActiveTab(key);
+    const onClick = (key: TabsNames) => setActiveTab(key);
 
     return (
         <div>
             <Title title={"Blog"} />
-            <Tabs tabsList={TABS_LIST} activeTab={activeTab} onTabClick={onTabClick}/>
+            <Tabs tabsList={TABS_LIST} activeTab={activeTab} onClick={onClick}/>
             <CardsList cardsList={MOCK_ARRAY}/>
         </div>
     )
