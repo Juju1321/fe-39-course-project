@@ -1,12 +1,15 @@
 @import "src/assets/colors";
 
 .container {
-  max-width: 1120px;
   padding-top: 72px;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid $medium;
   margin-bottom: 10px;
+}
+
+.darkContainer {
+  background-color: $secondary;
 }
 
 .breadCrumbs {
@@ -38,7 +41,7 @@
 .imgTextContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 0 auto;
   gap: 48px;
 }
 
@@ -57,13 +60,15 @@
   max-width: 920px;
   margin-bottom: 48px;
 }
+.darkText {
+  color: $white;
+}
 
 .buttonContainer {
   max-width: 922px;
   max-height: 56px;
   display: flex;
   justify-content: space-between;
-  margin-left: 97px;
   margin-bottom: 72px;
 }
 
