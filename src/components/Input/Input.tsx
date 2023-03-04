@@ -2,6 +2,7 @@ import React, {ChangeEvent, FC} from "react";
 import classNames from "classnames";
 
 import styles from "./Input.module.scss";
+import {Theme, useThemeContext} from "../../context/Theme/Context";
 
 type InputProps = {
     title: string;
@@ -10,17 +11,23 @@ type InputProps = {
     disabled?: boolean;
     value: string;
     errorText?: string;
+    type: string
 }
 
-const Input: FC<InputProps> = ({title, placeholder, onChange, disabled, value, errorText}) => {
+const Input: FC<InputProps> = ({title, placeholder, onChange, disabled, value, errorText,type}) => {
 
     const onChangeInputText = (event: ChangeEvent<HTMLInputElement>) => {
         onChange(event.target.value)
     }
 
+    const { theme } = useThemeContext();
+    const isDark = theme === Theme.Dark;
+
     return (
         <div className={styles.container}>
-            <div className={styles.title}>{title}</div>
+            <div className={classNames(styles.title, {
+                [styles.darkTitle]: isDark,
+            })}>{title}</div>
             <input
                 className={classNames(styles.input, {
                     [styles.disableInput]:disabled,
@@ -29,6 +36,7 @@ const Input: FC<InputProps> = ({title, placeholder, onChange, disabled, value, e
                 placeholder={placeholder}
                 disabled={disabled}
                 onChange={onChangeInputText}
+                type={type}
             />
             {errorText && <div className={styles.errorText}>{ errorText }</div>}
         </div>
